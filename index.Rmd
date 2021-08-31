@@ -1,0 +1,34 @@
+---
+title: "20 random tips and tricks for working with R, Rmarkdown, and RStudio"
+subtitle: "ISU Graphics Group Meeting"
+author: "Ashirwad Barnwal"
+date: "2021-09-09"
+output: 
+  xaringan::moon_reader:
+    seal: false
+    lib_dir: libs
+    nature:
+      highlightStyle: solarized-light
+      highlightLanguage: ["r", "css", "yaml"]
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+class: title-slide, left, middle
+background-image: url("images/light-bulb-icon.jpg")
+background-position: right
+background-size: contain
+background-color: #7899d4ff
+
+.pull-left[
+
+# `r rmarkdown::metadata$title`
+
+## `r rmarkdown::metadata$subtitle`
+
+### `r rmarkdown::metadata$author`
+
+### `r rmarkdown::metadata$date`
+
+]
