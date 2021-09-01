@@ -5,6 +5,7 @@ author: "Ashirwad Barnwal"
 date: "2021-09-09"
 output: 
   xaringan::moon_reader:
+    css: ["default", "assets/my-theme.css", "assets/my-fonts.css"]
     seal: false
     lib_dir: libs
     nature:
@@ -32,3 +33,26 @@ background-color: #7899d4ff
 ### `r rmarkdown::metadata$date`
 
 ]
+
+---
+
+class: middle, center, inverse
+background-image: url("images/isu-campanile.jpg")
+background-position: right
+background-size: contain
+
+.pull-left[
+
+## .big-text[Welcome!]
+
+]
+
+
+
+
+
+
+
+
+
+
