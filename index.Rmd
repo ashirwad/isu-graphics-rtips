@@ -2,6 +2,8 @@
 title: "20 random tips and tricks for working with R, Rmarkdown, and RStudio"
 subtitle: "ISU Graphics Group Meeting"
 author: "Ashirwad Barnwal"
+role: "Ph.D. Candidate (Civil) | M.S. Student (Statistics)"
+company: "Institute for Transportation (InTrans)"
 date: "2021-09-09"
 output: 
   xaringan::moon_reader:
@@ -47,12 +49,20 @@ background-size: contain
 
 ]
 
+---
 
+class: middle, center, inverse
 
+### `r rmarkdown::metadata$author`
 
+<img style="border-radius: 50%;" src="https://ashirwad.netlify.app/authors/ashirwad/avatar.jpg" width="150px"/>
 
+### `r rmarkdown::metadata$role`
 
+### `r rmarkdown::metadata$company`
 
-
+[`r fontawesome::fa("github")` @ashirwad](https://github.com/ashirwad)    
+[`r fontawesome::fa("linkedin")` @ashirwad1992](www.linkedin.com/in/ashirwad1992)   
+[`r fontawesome::fa("link")` ashirwad.netlify.app](https://ashirwad.netlify.app)
 
 
