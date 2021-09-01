@@ -65,4 +65,27 @@ class: middle, center, inverse
 [`r fontawesome::fa("linkedin")` @ashirwad1992](www.linkedin.com/in/ashirwad1992)   
 [`r fontawesome::fa("link")` ashirwad.netlify.app](https://ashirwad.netlify.app)
 
+---
+
+class: top, center
+
+.frame[
+
+# Tip #01: Use `setup` label for your setup chunk
+
+]
+
+> "There is one chunk name that imbues special behaviour: **setup**. When you’re in a notebook mode, the chunk named setup will be run automatically once, before any other code is run."
+>
+> [R4DS](https://r4ds.had.co.nz/r-markdown.html#chunk-name)
+
+
+
+
+
+
+
+
+
+
 
