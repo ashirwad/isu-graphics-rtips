@@ -16,6 +16,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: "16:9"
+      beforeInit: "https://platform.twitter.com/widgets.js"
 ---
 
 class: title-slide, left, middle
@@ -79,13 +80,18 @@ class: top, center
 >
 > [R4DS](https://r4ds.had.co.nz/r-markdown.html#chunk-name)
 
+---
 
+class: top, center
 
+.frame[
 
+# Tip #02: If you don't like the default arguments in R functions, change it!
 
+]
 
-
-
-
+<center>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Roses are red<br>Violets are blue <br>In R versions after 4.0.0<br>stringsAsFactors does not default to TRUE</p>&mdash; Kiegan Rice (@kieganer) <a href="https://twitter.com/kieganer/status/1361057477115203587?ref_src=twsrc%5Etfw">February 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
 
 
