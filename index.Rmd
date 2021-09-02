@@ -94,4 +94,18 @@ class: top, center
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Roses are red<br>Violets are blue <br>In R versions after 4.0.0<br>stringsAsFactors does not default to TRUE</p>&mdash; Kiegan Rice (@kieganer) <a href="https://twitter.com/kieganer/status/1361057477115203587?ref_src=twsrc%5Etfw">February 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </center>
 
+---
+
+class: top, center
+
+.frame[
+
+# Tip #03: Don't import the whole namespace if all you need is a couple of functions
+
+]
+
+<center>
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">FWIW you can accomplish something similar with base R tools now: e.g. `library(pkg, include.only = c(&quot;f1&quot;, &quot;f2&quot;))` will load &lt;pkg&gt; but only put functions f1 and f2 on the search path. Moral equivalent of &quot;from pkg import f1, f2&quot;?</p>&mdash; Kevin Ushey (@kevin_ushey) <a href="https://twitter.com/kevin_ushey/status/1281085273154048000?ref_src=twsrc%5Etfw">July 9, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</center>
+
 
