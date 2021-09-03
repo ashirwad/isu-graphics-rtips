@@ -149,3 +149,19 @@ background-size: contain
 
 <img style="border-radius: 50%;" src="https://unavatar.vercel.app/twitter/krlmlr" width="150px"/> 
 
+---
+
+class: top, left
+
+.frame[
+
+# Tip #06: Switch to **fs** package for file system operations
+
+]
+
+> **fs** functions smooth over some of the idiosyncrasies of file handling with base R functions:   
+> - Vectorization. All **fs** functions are vectorized, accepting multiple paths as input. Base functions are **inconsistently vectorized.**
+>
+> .center[[fs package website](https://fs.r-lib.org/index.html)]
+
+
