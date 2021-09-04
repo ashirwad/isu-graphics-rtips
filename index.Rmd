@@ -164,4 +164,20 @@ class: top, left
 >
 > .center[[fs package website](https://fs.r-lib.org/index.html)]
 
+---
+
+class: top, left
+
+.frame[
+
+# Tip #07: Use `fs::file_show` to open files or directories
+
+]
+
+> `file_show(path = ".", browser = getOption("browser"))`
+>
+> .center[[function reference](https://fs.r-lib.org/reference/file_show.html)]
+
+
+
 
