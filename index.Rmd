@@ -178,6 +178,38 @@ class: top, left
 >
 > .center[[function reference](https://fs.r-lib.org/reference/file_show.html)]
 
+---
+
+class: top, left
+
+.frame[
+
+# Tip #08: Use **Mathpix Snip** to generate LaTeX code for equation insertion in Rmarkdown
+
+]
+
+> Export images and PDFs to LaTex, DOCX, Overleaf, Markdown, Excel, ChemDraw and more, with our AI powered document conversion technology.
+> 
+> Save time preparing scientific documents with Mathpix Snip.
+>
+> .center[[mathpix.com](https://mathpix.com/)]
+
+---
+
+class: middle, center
+
+```{r echo = FALSE}
+knitr::include_url(
+  "https://mathpix.com/videos/hero-video-snip.mp4", height = "600px"
+)
+```
+
+
+
+
+
+
+
 
 
 
