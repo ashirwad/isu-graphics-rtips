@@ -249,5 +249,29 @@ class: top, left
 class: middle, center
 
 ![visual-markdown](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif) 
-  
+ 
+---
+
+class: top, left
+
+.frame[
+
+# Tip #11: Use **datapasta** for copying and pasting data to and from R
+
+]
+
+> **datapasta** is about reducing resistance associated with copying and pasting data to and from R.
+>
+> .center[[Miles McBain](https://milesmcbain.github.io/datapasta/)]
+
+---
+
+class: middle, center
+
+```{r datapasta-demo, echo = FALSE, out.width = "90%"}
+knitr::include_graphics("https://raw.githubusercontent.com/milesmcbain/datapasta/master/inst/media/tribble_paste.gif")
+```
+
+
+
 
