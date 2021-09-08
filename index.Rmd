@@ -336,3 +336,18 @@ class: top, left
 >
 > .center[[Charlie Sharpsteen](https://daqana.github.io/tikzDevice/index.html)]
 
+---
+
+class: top, left
+
+.frame[
+
+# Tip #16: Use **cache.extra** knitr chunk option to enable cache dependency on a file
+
+]
+
+> "If I have a chunk that reads a data file then **modifying the data file doesn't invalidate the cached chunk**."
+> 
+> .center[[Barry Rowlingson](https://github.com/yihui/knitr/issues/238#issue-4608247)]
+
+
