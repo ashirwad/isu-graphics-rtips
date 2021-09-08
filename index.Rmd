@@ -300,5 +300,25 @@ class: top, left
 >
 > .center[[Stefano Meschiari](https://cran.r-project.org/web/packages/latex2exp/vignettes/using-latex2exp.html)]
 
+---
 
+class: top, left
+
+.frame[
+
+# Tip #14: Use **scales::show_col** function to preview colors in RStudio viewer
+
+]
+
+.pull-left[
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">scales::show_col() <a href="https://t.co/El8891gLgV">https://t.co/El8891gLgV</a></p>&mdash; tj mahr 🍍🍕 (@tjmahr) <a href="https://twitter.com/tjmahr/status/1374423244028014602?ref_src=twsrc%5Etfw">March 23, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+]
+
+.pull-right[
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I think scales::show_col() is what you&#39;re looking for<a href="https://t.co/D3GwydYAKD">https://t.co/D3GwydYAKD</a></p>&mdash; Jake Rothschild (@jake_rothschild) <a href="https://twitter.com/jake_rothschild/status/1420546678034247686?ref_src=twsrc%5Etfw">July 29, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+]
 
