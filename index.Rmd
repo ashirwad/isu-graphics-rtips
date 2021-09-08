@@ -282,8 +282,23 @@ class: top, left
 
 ]
 
-> Using `facet_wrap()` in ggplot2 is a great way to create multiple panelled plots. Though when I am running these, particularly on datasets with different scales, **the axis are not as clean as I like**.
+> "Using `facet_wrap()` in ggplot2 is a great way to create multiple panelled plots. Though when I am running these, particularly on datasets with different scales, **the axis are not as clean as I like**."
 >
 > .center[[Christopher Chizinski](https://chrischizinski.github.io/rstats/using_geom_blank/)]
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #13: Use **latex2exp** to convert latex into plotmath expressions
+
+]
+
+> "I find **plotmath expressions to be quite opaque**, while LaTeX is a de-facto standard for mathematical expressions, so [latex2exp] package might be useful to others as well."
+>
+> .center[[Stefano Meschiari](https://cran.r-project.org/web/packages/latex2exp/vignettes/using-latex2exp.html)]
+
 
 
