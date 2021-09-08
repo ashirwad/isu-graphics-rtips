@@ -228,8 +228,26 @@ knitr::include_url(
 )
 ```
 
+---
 
+class: top, left
 
+.frame[
 
+# Tip #10: Upgrade RStudio and start using the **visual markdown editor**
 
+]
+
+> Visual markdown editing is available in RStudio v1.4 or higher. You can download the latest version of RStudio here: https://rstudio.com/products/rstudio/download/.
+> 
+> Markdown documents can be edited in either source or visual mode. To switch into visual mode for a given document, use the  button at the top-right of the document toolbar (or alternatively the ⌃⇧ F4 keyboard shortcut).
+>
+> .center[[rstudio.github.io](https://rstudio.github.io/visual-markdown-editing/?_ga=2.27003637.974706172.1630717819-1281065507.1590280001)]
+
+---
+
+class: middle, center
+
+![visual-markdown](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif) 
+  
 
