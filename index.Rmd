@@ -322,3 +322,17 @@ class: top, left
 
 ]
 
+---
+
+class: top, left
+
+.frame[
+
+# Tip #15: Use **tikzDevice** to generate tikz code for ggplot
+
+]
+
+> "The tikzDevice package **provides a graphics output device for R that records plots in a LaTeX-friendly format**. The device transforms plotting commands issued by R functions into LaTeX code blocks. When included in a paper typeset by LaTeX, these blocks are interpreted with the help of TikZ—a graphics package for TeX and friends written by Till Tantau."
+>
+> .center[[Charlie Sharpsteen](https://daqana.github.io/tikzDevice/index.html)]
+
