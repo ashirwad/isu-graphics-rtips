@@ -350,4 +350,17 @@ class: top, left
 > 
 > .center[[Barry Rowlingson](https://github.com/yihui/knitr/issues/238#issue-4608247)]
 
+---
+
+class: top, left
+
+.frame[
+
+# Tip #17: Use **rio** package for data import and export
+
+]
+
+> "A Swiss-Army Knife for Data I/O"
+>
+> .center[[Chung-hong Chan](https://cloud.r-project.org/web/packages/rio/vignettes/rio.html)]
 
