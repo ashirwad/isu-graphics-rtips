@@ -364,3 +364,24 @@ class: top, left
 >
 > .center[[Chung-hong Chan](https://cloud.r-project.org/web/packages/rio/vignettes/rio.html)]
 
+---
+
+class: top, left
+
+.frame[
+
+# Tip #18: Use **crop** and **optipng** knitr chunk options for cropping and optimizing png plots
+
+]
+
+.pull-left[
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> question:<br><br>How do crop unneeded white space from a ggplot? Plot is going into an RMarkdown PDF and has a lot of white space above and below it.</p>&mdash; Patrick (@pjames122) <a href="https://twitter.com/pjames122/status/1031992769127100418?ref_src=twsrc%5Etfw">August 21, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+]
+
+.pull-right[
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Reduce <a href="https://twitter.com/hashtag/knitr?src=hash&amp;ref_src=twsrc%5Etfw">#knitr</a> output file size by automatically optimizing images: <a href="https://t.co/wCArERuhoF">https://t.co/wCArERuhoF</a> <a href="https://twitter.com/hashtag/Rmarkdown?src=hash&amp;ref_src=twsrc%5Etfw">#Rmarkdown</a> <a href="https://twitter.com/hashtag/Rstats?src=hash&amp;ref_src=twsrc%5Etfw">#Rstats</a> <a href="https://twitter.com/hashtag/pngquant?src=hash&amp;ref_src=twsrc%5Etfw">#pngquant</a> <a href="https://twitter.com/hashtag/optipng?src=hash&amp;ref_src=twsrc%5Etfw">#optipng</a></p>&mdash; Kamil Slowikowski (@slowkow) <a href="https://twitter.com/slowkow/status/798614606377783296?ref_src=twsrc%5Etfw">November 15, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+]
