@@ -142,17 +142,23 @@ class: middle, center
 
 ---
 
-class: top, center
+class: top, left
 
 .frame[
 
-# Tip #04: Handle ambiguous function names elegantly using `conflicted` package
+# Tip #04: Handle ambiguous function names elegantly using **conflicted** package
 
 ]
 
 <center>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">The conflicted 📦 is now on CRAN: <a href="https://t.co/ngXtwiOePf">https://t.co/ngXtwiOePf</a> — make ambiguous function names explicit errors <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/TDuCNx3s8N">pic.twitter.com/TDuCNx3s8N</a></p>&mdash; Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/1003700738009075716?ref_src=twsrc%5Etfw">June 4, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </center>
+
+---
+
+class:  middle, center
+
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/5vXWCBveUn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
