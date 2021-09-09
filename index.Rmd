@@ -400,7 +400,19 @@ class: top, left
 >
 > .center[[From SO question by donodarazao](https://stackoverflow.com/q/5869539/10789048)]
 
+---
 
+class: top, left
+
+.frame[
+
+# Tip #20: Use RStudio **snippets** to add header templates to R scripts
+
+]
+
+> "**Do you ever face a blank script, and not know where to start?** This is one reason I find it useful to have a template to follow for my R scripts."
+>
+> .center[[From Dr Timothy S Farewell's blog](https://timfarewell.co.uk/my-r-script-header-template/#:~:text=Open%20RStudio,of%20the%20snippets%20code%20block.)]
 
 
 
