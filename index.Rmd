@@ -88,17 +88,37 @@ class: middle, center
 
 ---
 
-class: top, center
+class: top, left
 
 .frame[
 
-# Tip #02: If you don't like the default arguments in R functions, change it!
+# Tip #02: If you don't like the **default arguments** in R functions, change it!
 
 ]
 
-<center>
+.pull-left[
+
+```{r echo = FALSE, out.width = "65%"}
+knitr::include_graphics(
+  "https://media0.giphy.com/media/Ssltx68WIeX1wA0Mg8/giphy-downsized.gif"
+)
+```
+
+.footnote[Available at [*GIPHY*](https://gph.is/g/4zgwK8L)]
+
+]
+
+.pull-right[
+
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Roses are red<br>Violets are blue <br>In R versions after 4.0.0<br>stringsAsFactors does not default to TRUE</p>&mdash; Kiegan Rice (@kieganer) <a href="https://twitter.com/kieganer/status/1361057477115203587?ref_src=twsrc%5Etfw">February 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</center>
+
+]
+
+---
+
+class: middle, center
+
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/rgxkgv_bgHQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
