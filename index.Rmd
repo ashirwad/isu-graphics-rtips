@@ -385,3 +385,23 @@ class: top, left
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Reduce <a href="https://twitter.com/hashtag/knitr?src=hash&amp;ref_src=twsrc%5Etfw">#knitr</a> output file size by automatically optimizing images: <a href="https://t.co/wCArERuhoF">https://t.co/wCArERuhoF</a> <a href="https://twitter.com/hashtag/Rmarkdown?src=hash&amp;ref_src=twsrc%5Etfw">#Rmarkdown</a> <a href="https://twitter.com/hashtag/Rstats?src=hash&amp;ref_src=twsrc%5Etfw">#Rstats</a> <a href="https://twitter.com/hashtag/pngquant?src=hash&amp;ref_src=twsrc%5Etfw">#pngquant</a> <a href="https://twitter.com/hashtag/optipng?src=hash&amp;ref_src=twsrc%5Etfw">#optipng</a></p>&mdash; Kamil Slowikowski (@slowkow) <a href="https://twitter.com/slowkow/status/798614606377783296?ref_src=twsrc%5Etfw">November 15, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ]
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #19: Add labels to factor levels using **sjlabelled** package for pretty printing
+
+]
+
+> "There seems to be a difference between levels and labels of a factor in R. Up to now, I always thought that **levels were the 'real' name of factor levels**, and **labels were the names used for output (such as tables and plots)**."
+>
+> .center[[From SO question by donodarazao](https://stackoverflow.com/q/5869539/10789048)]
+
+
+
+
+
+
