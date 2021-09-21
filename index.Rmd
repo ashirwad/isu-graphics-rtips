@@ -146,13 +146,13 @@ class: top, left
 
 .frame[
 
-# Tip #04: Handle ambiguous function names elegantly using **conflicted** package
+# Tip #04: Handle ambiguous function names elegantly using the conflicted package
 
 ]
 
-<center>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The conflicted 📦 is now on CRAN: <a href="https://t.co/ngXtwiOePf">https://t.co/ngXtwiOePf</a> — make ambiguous function names explicit errors <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/TDuCNx3s8N">pic.twitter.com/TDuCNx3s8N</a></p>&mdash; Hadley Wickham (@hadleywickham) <a href="https://twitter.com/hadleywickham/status/1003700738009075716?ref_src=twsrc%5Etfw">June 4, 2018</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</center>
+> "The goal of conflicted is to provide an alternative conflict resolution strategy. R’s default conflict resolution system gives precedence to the most recently loaded package. This can make it hard to detect conflicts, particularly when introduced by an update to an existing package. **conflicted takes a different approach, making every conflict an error and forcing you to choose which function to use**."
+>
+> .center[[Hadley Wickham](https://conflicted.r-lib.org/)]
 
 ---
 
