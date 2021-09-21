@@ -203,14 +203,14 @@ class: top, left
 
 .frame[
 
-# Tip #06: Switch to **fs** package for file system operations
+# Tip #06: Switch to fs package for file system operations
 
 ]
 
-> **fs** functions smooth over some of the idiosyncrasies of file handling with base R functions:   
-> - Vectorization. All **fs** functions are vectorized, accepting multiple paths as input. Base functions are **inconsistently vectorized.**
+> "fs functions smooth over some of the idiosyncrasies of file handling with base R functions: 
+> - Vectorization. All fs functions are vectorized, accepting multiple paths as input. Base functions are **inconsistently vectorized.**"
 >
-> .center[[fs package website](https://fs.r-lib.org/index.html)]
+> .center[[Jim Hester](https://fs.r-lib.org/index.html)]
 
 ---
 
