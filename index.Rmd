@@ -92,7 +92,7 @@ class: top, left
 
 .frame[
 
-# Tip #02: If you don't like the **default arguments** in R functions, change it!
+# Tip #02: If you don't like the default arguments in an R function, change it!
 
 ]
 
