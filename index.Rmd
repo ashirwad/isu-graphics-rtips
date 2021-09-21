@@ -126,7 +126,7 @@ class: top, left
 
 .frame[
 
-# Tip #03: Don't import the **whole namespace** if all you need is a couple of functions
+# Tip #03: Don't import the whole namespace if all you need is a couple of functions
 
 ]
 
