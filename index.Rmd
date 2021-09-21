@@ -390,7 +390,7 @@ class: top, left
 
 .frame[
 
-# Tip #14: Use **tikzDevice** to generate tikz code for ggplot
+# Tip #14: Use tikzDevice package to generate tikz code for ggplot
 
 ]
 
