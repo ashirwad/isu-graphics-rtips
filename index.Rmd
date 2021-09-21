@@ -162,19 +162,23 @@ class:  middle, center
 
 ---
 
-class: top, center
+class: top, left
 
 .frame[
 
-# Tip #05: Use `here::here` for generating file paths
+# Tip #05: Use `here::here()` for generating file paths
 
 ]
 
-> If the first line of your R script is  
+.center[
+
+> "If the first line of your R script is  
 > `setwd("C:\Users\jenny\path\that\only\I\have")`  
-> I will come into your office and SET YOUR COMPUTER ON FIRE 🔥.
+> I will come into your office and SET YOUR COMPUTER ON FIRE 🔥."
 >
 > [Jenny Bryan](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+
+]
 
 ---
 
@@ -183,7 +187,7 @@ background-image: url("images/here-function-drake-meme.png")
 background-position: right
 background-size: contain
 
-## All hail [@krlmlr](https://twitter.com/krlmlr?s=20)! 
+## Thanks [@krlmlr](https://twitter.com/krlmlr?s=20)!
 
 <img style="border-radius: 50%;" src="https://unavatar.vercel.app/twitter/krlmlr" width="150px"/> 
 
