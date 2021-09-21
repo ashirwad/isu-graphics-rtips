@@ -224,7 +224,7 @@ class: top, left
 
 .frame[
 
-# Tip #07: Use `fs::file_show` to open files or directories
+# Tip #07: Use `fs::file_show()` to open files or directories
 
 ]
 
