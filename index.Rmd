@@ -322,11 +322,11 @@ class: top, left
 
 .frame[
 
-# Tip #11: Use **geom_blank()** for setting pretty axis limits for faceted plots
+# Tip #11: Use geom_blank() for setting pretty axis limits for faceted plots
 
 ]
 
-> "Using `facet_wrap()` in ggplot2 is a great way to create multiple panelled plots. Though when I am running these, particularly on datasets with different scales, **the axis are not as clean as I like**."
+> "Using facet_wrap() in ggplot2 is a great way to create multiple panelled plots. Though when I am running these, particularly on datasets with different scales, **the axis are not as clean as I like**."
 >
 > .center[[Christopher Chizinski](https://chrischizinski.github.io/rstats/using_geom_blank/)]
 
