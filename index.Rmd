@@ -266,13 +266,13 @@ class: top, left
 
 .frame[
 
-# Tip #09: Use **Mathpix Snip** to generate LaTeX code for equation insertion in Rmarkdown
+# Tip #09: Use Mathpix Snip to generate LaTeX code for math equations
 
 ]
 
-> Export images and PDFs to LaTex, DOCX, Overleaf, Markdown, Excel, ChemDraw and more, with our AI powered document conversion technology.
+> "Export images and PDFs to LaTex, DOCX, Overleaf, Markdown, Excel, ChemDraw and more, with our AI powered document conversion technology."
 > 
-> Save time preparing scientific documents with Mathpix Snip.
+> "Save time preparing scientific documents with Mathpix Snip."
 >
 > .center[[mathpix.com](https://mathpix.com/)]
 
