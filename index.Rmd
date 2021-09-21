@@ -410,7 +410,7 @@ class: top, left
 
 .frame[
 
-# Tip #15: Use **cache.extra** knitr chunk option to enable cache dependency on a file
+# Tip #15: Use cache.extra knitr chunk option to enable cache dependency on a file
 
 ]
 
