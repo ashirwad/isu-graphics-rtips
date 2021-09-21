@@ -318,35 +318,7 @@ class: top, left
 
 .frame[
 
-# Tip #11: Use **datapasta** for copying and pasting data to and from R
-
-]
-
-> **datapasta** is about reducing resistance associated with copying and pasting data to and from R.
->
-> .center[[Miles McBain](https://milesmcbain.github.io/datapasta/)]
-
----
-
-class: middle, center
-
-```{r datapasta-demo, echo = FALSE, out.width = "90%"}
-knitr::include_graphics("https://raw.githubusercontent.com/milesmcbain/datapasta/master/inst/media/tribble_paste.gif")
-```
-
----
-
-class: middle, center
-
-<iframe width="1120" height="630" src="https://www.youtube.com/embed/MWcsq72RZtE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
----
-
-class: top, left
-
-.frame[
-
-# Tip #12: Use **geom_blank()** for setting pretty axis limits for faceted plots
+# Tip #11: Use **geom_blank()** for setting pretty axis limits for faceted plots
 
 ]
 
@@ -366,7 +338,7 @@ class: top, left
 
 .frame[
 
-# Tip #13: Use **latex2exp** to convert latex into plotmath expressions
+# Tip #12: Use **latex2exp** to convert latex into plotmath expressions
 
 ]
 
@@ -386,7 +358,7 @@ class: top, left
 
 .frame[
 
-# Tip #14: Use **scales::show_col** function to preview colors in RStudio viewer
+# Tip #13: Use **scales::show_col** function to preview colors in RStudio viewer
 
 ]
 
@@ -414,7 +386,7 @@ class: top, left
 
 .frame[
 
-# Tip #15: Use **tikzDevice** to generate tikz code for ggplot
+# Tip #14: Use **tikzDevice** to generate tikz code for ggplot
 
 ]
 
@@ -434,7 +406,7 @@ class: top, left
 
 .frame[
 
-# Tip #16: Use **cache.extra** knitr chunk option to enable cache dependency on a file
+# Tip #15: Use **cache.extra** knitr chunk option to enable cache dependency on a file
 
 ]
 
@@ -454,27 +426,7 @@ class: top, left
 
 .frame[
 
-# Tip #17: Use **rio** package for data import and export
-
-]
-
-> "A Swiss-Army Knife for Data I/O"
->
-> .center[[Chung-hong Chan](https://cloud.r-project.org/web/packages/rio/vignettes/rio.html)]
-
----
-
-class: middle, center
-
-<iframe width="1120" height="630" src="https://www.youtube.com/embed/nfKi_O6hJbc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
----
-
-class: top, left
-
-.frame[
-
-# Tip #18: Use **crop** and **optipng** knitr chunk options for cropping and optimizing png plots
+# Tip #16: Use **crop** and **optipng** knitr chunk options for cropping and optimizing png plots
 
 ]
 
@@ -495,6 +447,54 @@ class: top, left
 class: middle, center
 
 <iframe width="1120" height="630" src="https://www.youtube.com/embed/XeYx4sUu7Xw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #17: Use **datapasta** for copying and pasting data to and from R
+
+]
+
+> **datapasta** is about reducing resistance associated with copying and pasting data to and from R.
+>
+> .center[[Miles McBain](https://milesmcbain.github.io/datapasta/)]
+
+---
+
+class: middle, center
+
+```{r datapasta-demo, echo = FALSE, out.width = "90%"}
+knitr::include_graphics("https://raw.githubusercontent.com/milesmcbain/datapasta/master/inst/media/tribble_paste.gif")
+```
+
+---
+
+class: middle, center
+
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/MWcsq72RZtE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #18: Use **rio** package for data import and export
+
+]
+
+> "A Swiss-Army Knife for Data I/O"
+>
+> .center[[Chung-hong Chan](https://cloud.r-project.org/web/packages/rio/vignettes/rio.html)]
+
+---
+
+class: middle, center
+
+<iframe width="1120" height="630" src="https://www.youtube.com/embed/nfKi_O6hJbc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ---
 
