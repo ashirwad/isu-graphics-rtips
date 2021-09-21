@@ -342,7 +342,7 @@ class: top, left
 
 .frame[
 
-# Tip #12: Use **latex2exp** to convert latex into plotmath expressions
+# Tip #12: Use latex2exp package to convert latex into plotmath expressions
 
 ]
 
