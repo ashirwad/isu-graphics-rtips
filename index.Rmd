@@ -362,7 +362,7 @@ class: top, left
 
 .frame[
 
-# Tip #13: Use **scales::show_col** function to preview colors in RStudio viewer
+# Tip #13: Use scales::show_col() function to preview colors in RStudio viewer
 
 ]
 
