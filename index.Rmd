@@ -292,11 +292,11 @@ class: top, left
 
 .frame[
 
-# Tip #10: Use **TablesGenerator** for generating markdown tables
+# Tip #10: Use TablesGenerator for generating markdown tables
 
 ]
 
-> Quickly and easily generate markup for tables in LaTeX, HTML, plain text, Markdown and MediaWiki formats.
+> "Quickly and easily generate markup for tables in LaTeX, HTML, plain text, Markdown and MediaWiki formats."
 >
 > .center[[onethingwell.org](https://onethingwell.org/post/75483091484/tablesgenerator)] 
 
