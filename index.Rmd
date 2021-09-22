@@ -430,7 +430,7 @@ class: top, left
 
 .frame[
 
-# Tip #16: Use **crop** and **optipng** knitr chunk options for cropping and optimizing png plots
+# Tip #16: Use crop and optipng knitr chunk options for cropping and optimizing png plots
 
 ]
 
