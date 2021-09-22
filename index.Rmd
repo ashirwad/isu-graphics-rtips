@@ -96,7 +96,7 @@ class: middle, center, inverse
 ### `r rmarkdown::metadata$company`
 
 [`r fontawesome::fa("github")` @ashirwad](https://github.com/ashirwad)    
-[`r fontawesome::fa("linkedin")` @ashirwad1992](www.linkedin.com/in/ashirwad1992)   
+[`r fontawesome::fa("linkedin")` @ashirwad1992](https://www.linkedin.com/in/ashirwad1992/)   
 [`r fontawesome::fa("link")` ashirwad.netlify.app](https://ashirwad.netlify.app)
 
 ---
@@ -399,7 +399,7 @@ class: top, left
 
 .frame[
 
-# Tip #13: Use scales::show_col() function to preview colors in RStudio viewer
+# Tip #13: Use `scales::show_col()` function to preview colors in RStudio viewer
 
 ]
 
@@ -642,7 +642,7 @@ background-color: #fad662
 ### Connect with me here...
 
 [`r fontawesome::fa("github")` @ashirwad](https://github.com/ashirwad)    
-[`r fontawesome::fa("linkedin")` @ashirwad1992](www.linkedin.com/in/ashirwad1992)   
+[`r fontawesome::fa("linkedin")` @ashirwad1992](https://www.linkedin.com/in/ashirwad1992/)   
 [`r fontawesome::fa("link")` ashirwad.netlify.app](https://ashirwad.netlify.app)
 
 ]
