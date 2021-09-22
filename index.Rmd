@@ -546,4 +546,72 @@ class: middle, center
 
 <iframe width="1120" height="630" src="https://www.youtube.com/embed/ywbgYS6Z_Hc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+---
 
+class: top, center
+
+.frame[
+
+# Happy Fall Y'all!
+
+]
+
+.pull-left[
+
+```{r echo = FALSE, out.width = "100%"}
+knitr::include_graphics("https://media4.giphy.com/media/ONxw4niC96zwk/giphy.gif")
+```
+
+.left[.footnote[Available at [*GIPHY*](https://media.giphy.com/media/ONxw4niC96zwk/giphy.gif?cid=790b76118d57c7a8946002fb40b5af348500a765f5bbb75d&rid=giphy.gif&ct=g)]]
+
+]
+
+.pull-right[
+
+```{r echo = FALSE, out.width = "100%"}
+knitr::include_graphics("https://media0.giphy.com/media/4TTqqym8oj0Q0/giphy.gif")
+```
+
+.left[.footnote[Available at [*GIPHY*](https://media.giphy.com/media/4TTqqym8oj0Q0/giphy.gif?cid=790b761190c3536ca9003bb4ce7ca3ec12008603a5494af8&rid=giphy.gif&ct=g)]]
+
+]
+
+---
+
+class: bottom
+background-color: #fad662
+
+.pull-left[
+
+### A big thanks to:
+
++ Yihui Xie for [xaringan](https://github.com/yihui/xaringan),
++ Alison Hill for [slide layout](https://github.com/apreshill/talks/tree/master/ares-kind-tools),
++ [Ganesh Krishnan](https://www.linkedin.com/in/ganeshkrishnann/) and [ISU Graphics Group](https://isu-graphics.rbind.io/) for the talk invitation
+
+<br>
+<br>
+<br>
+<br>
+
+### GitHub repo: [`r fontawesome::fa("github")`](https://github.com/ashirwad/isu-graphics-rtips) | License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+]
+
+.pull-right[
+
+.right[
+
+<img style="border-radius: 50%;" src="https://ashirwad.netlify.app/authors/ashirwad/avatar.jpg" width="150px"/>
+
+# Thank you!
+
+### Connect with me here...
+
+[`r fontawesome::fa("github")` @ashirwad](https://github.com/ashirwad)    
+[`r fontawesome::fa("linkedin")` @ashirwad1992](www.linkedin.com/in/ashirwad1992)   
+[`r fontawesome::fa("link")` ashirwad.netlify.app](https://ashirwad.netlify.app)
+
+]
+
+]
