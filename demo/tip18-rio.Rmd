@@ -1,0 +1,37 @@
+---
+title: "rio-demo"
+author: "Ashirwad Barnwal"
+date: "9/9/2021"
+output: html_document
+---
+
+**Step 1**: Load here and rio packages
+
+```{r setup}
+library(here)
+library(rio)
+```
+
+**Step 2**: Export mtcars data set to multiple file formats
+
+```{r}
+export(mtcars, here("demo", "data", "mtcars.csv"))
+export(mtcars, here("demo", "data", "mtcars.rds"))
+export(mtcars, here("demo", "data", "mtcars2.csv.zip"))
+```
+
+Notice that we don't need to worry about using different functions for exporting to different file formats!
+
+**Step 3**: Import data sets
+
+```{r}
+mtcars_csv <- import(here("demo", "data", "mtcars.csv"))
+mtcars_rds <- import(here("demo", "data", "mtcars.rds"))
+mtcars_zip <- import(here("demo", "data", "mtcars2.csv.zip"))
+
+nrow(mtcars_csv)
+nrow(mtcars_rds)
+nrow(mtcars_zip)
+```
+
+Similar to export, we don't need to use different functions for importing data of different types!

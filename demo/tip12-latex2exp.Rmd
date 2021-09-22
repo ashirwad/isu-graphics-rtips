@@ -1,0 +1,34 @@
+---
+title: "latex2exp-demo"
+author: "Ashirwad Barnwal"
+date: "9/9/2021"
+output: html_document
+---
+
+**Step 1**: Load tidyverse and latex2exp
+
+```{r setup}
+library(tidyverse)
+library(latex2exp)
+```
+
+**Step 2**: Generate a plot with math symbols
+
+```{r}
+x <- seq(0, 4, length.out = 100)
+alpha <- 1:5
+data <- map_df(alpha, ~ tibble(v = .*x^., x = x, alpha = .))
+
+ggplot(data, aes(x = x, y = v, color = as.factor(alpha))) +
+  geom_line() + 
+  ylab(TeX(r"($\alpha  x^\alpha$, where $\alpha \in 1\ldots 5$)")) +
+  ggtitle(
+    TeX(r"(Using $\LaTeX$ for plotting in ggplot2. I $\heartsuit$ ggplot!)")
+  ) +
+  coord_cartesian(ylim = c(-1, 10)) +
+  guides(color = guide_legend(title = NULL)) +
+  scale_color_discrete(labels = lapply(sprintf(r"($\alpha = %d$)", alpha), TeX))
+```
+
+This example is borrowed from the package vignette.
+

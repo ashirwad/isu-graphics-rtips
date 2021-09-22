@@ -1,0 +1,28 @@
+---
+title: "visual-editor-demo"
+author: "Ashirwad Barnwal"
+date: "9/18/2021"
+output: html_document
+---
+
+# Visual editor demo
+
+This is awesome!
+
+## Insert a math equation
+
+$$
+\therefore \hat{\boldsymbol{\beta}}=\left(\boldsymbol{X}^{\prime} \boldsymbol{X}\right)^{-1} \boldsymbol{X}^{\prime} \boldsymbol{y}=\frac{1}{2} \boldsymbol{I} \boldsymbol{X}^{\prime} \boldsymbol{y}=\frac{1}{2} \boldsymbol{X}^{\prime} \boldsymbol{y}
+$$
+
+## Insert a table
+
+|                |                   |                 |                 |                 |       |
+|----------------|-------------------|-----------------|-----------------|-----------------|-------|
+| A: IFL (N=428) | F: FOLFOX (N=691) | G: IROX (N=380) | Total (N=1499)  | p value         |       |
+| sex            |                   |                 |                 |                 | 0.190 |
+| Male           | 277 (64.7%)       | 411 (59.5%)     | 228 (60.0%)     | 916 (61.1%)     |       |
+| Female         | 151 (35.3%)       | 280 (40.5%)     | 152 (40.0%)     | 583 (38.9%)     |       |
+| Age in Years   |                   |                 |                 |                 | 0.614 |
+| Mean (SD)      | 59.673 (11.365)   | 60.301 (11.632) | 59.763 (11.499) | 59.985 (11.519) |       |
+| Range          | 27.000 - 88.000   | 19.000 - 88.000 | 26.000 - 85.000 | 19.000 - 88.000 |       |

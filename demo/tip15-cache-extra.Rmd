@@ -1,0 +1,28 @@
+---
+title: "cache-extra-demo"
+author: "Ashirwad Barnwal"
+date: "9/20/2021"
+output: html_document
+---
+
+**Step 1**: Load *here* and *tidyverse* packages
+
+```{r setup, message = FALSE, warning = FALSE}
+library(here)
+library(tidyverse)
+```
+
+**Step 2**: Import air quality data set
+
+```{r air-quality, cache = TRUE, cache.extra = file.mtime(here("demo", "data", "airquality.csv"))}
+air_quality <- read_csv(here("demo", "data", "airquality.csv"))
+
+# Get the number of rows
+nrow(air_quality)
+```
+
+Notice that updating the *airquality.csv* file does not invalidate the *air-quality* code chunk. The number of rows still shows 153 even when the file has 306 rows!
+
+**Step 3**: Go back to **Step 2** and add *cache.extra* chunk option to introduce cache dependency on the file
+
+Notice that the number of rows is now computed correctly.

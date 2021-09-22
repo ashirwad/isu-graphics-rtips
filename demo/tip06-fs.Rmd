@@ -1,0 +1,56 @@
+---
+title: "fs-demo"
+author: "Ashirwad Barnwal"
+date: "9/18/2021"
+output: html_document
+---
+
+Let's see a demo of differences between *fs* and base R functions.
+
+**Step 1**: Load the *fs* package
+
+```{r}
+library(fs)
+```
+
+**Step 2**: Get the list of files in the current directory
+
+```{r}
+# fs package
+dir_ls()
+
+# base R
+list.files()
+```
+
+Notice that the output of *dir_ls()* renders nicely and is color coded to visually distinguish files and directories.
+
+**Step 3**: Get the list of directories in the current directory
+
+```{r}
+# fs package
+dir_ls(type = "directory")
+
+# base R (need a new function)
+list.dirs(full.names = FALSE, recursive = FALSE)
+```
+
+Notice that to get just the list of directories we need to use a separate function in base R, but it can be accomplished using the same *dir_ls()* function by changing one of the arguments.
+
+**Step 4**: Get the list of directories in the current directory (only recurse to a certain level)
+
+```{r}
+# fs package
+dir_ls(recurse = 1, type = "directory")
+dir_ls(recurse = 2, type = "directory")
+
+# base R (no such option to recurse to a specific level, either it's recursive or non-recursive)
+list.dirs(full.names = FALSE, recursive = FALSE)
+list.dirs(full.names = FALSE, recursive = TRUE)
+```
+
+
+
+
+
+

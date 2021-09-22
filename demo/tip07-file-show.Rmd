@@ -1,0 +1,29 @@
+---
+title: "file-show-demo"
+author: "Ashirwad Barnwal"
+date: "9/18/2021"
+output: html_document
+---
+
+**Step 1**: Load *fs* and *here* packages
+
+```{r}
+library(fs)
+library(here)
+```
+
+**Step 2**: See how I used to open *tempdir* before I discovered *file_show()*
+
+
+**Step 3**: Now use *file_show()* to open *tempdir*
+
+```{r}
+file_show(tempdir())
+```
+
+**Step 4**: Use *file_show()* to open a csv file
+
+```{r}
+file_show(here("demo", "data", "mtcars.csv"))
+```
+

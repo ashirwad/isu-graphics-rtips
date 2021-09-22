@@ -1,0 +1,47 @@
+---
+title: "crop-optipng-demo"
+author: "Ashirwad Barnwal"
+date: "9/21/2021"
+output: html_document
+---
+
+**Step 1**: Load *tidyverse* and define knitr hooks
+
+```{r}
+library(tidyverse)
+
+# Crop and optimize plots
+knitr::knit_hooks$set(crop = knitr::hook_pdfcrop)
+knitr::knit_hooks$set(optipng = knitr::hook_optipng)
+```
+
+Note: You need to install *pdfcrop*, *magick*, and *OptiPNG* for cropping and optimization to work.
+
+```{r}
+# install.packages("magick")
+Sys.which("magick")
+Sys.which("pdfcrop")
+Sys.which("optipng")
+```
+
+**Step 2**: Create a ggplot
+
+```{r p1, cache = TRUE}
+p1 <- mtcars %>%
+  ggplot(aes(x = cyl, y = mpg)) + 
+  geom_point() + 
+  theme(plot.margin = unit(c(1, 1, 1.5, 1.2), "cm"))
+p1
+```
+
+**Step 3**: Crop and optimize the ggplot created in **Step 2**
+
+```{r p2, crop = TRUE, optipng = '', cache = TRUE}
+p2 <- mtcars %>%
+  ggplot(aes(x = cyl, y = mpg)) + 
+  geom_point() + 
+  theme(plot.margin = unit(c(1, 1, 1.5, 1.2), "cm"))
+p2
+```
+
+Notice that the size of image generated in **Step 3** is smaller than the one generated in **Step 2**.

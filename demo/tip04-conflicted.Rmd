@@ -1,0 +1,27 @@
+---
+title: "conflicted-demo"
+author: "Ashirwad Barnwal"
+date: "9/9/2021"
+output: html_document
+---
+
+**Step 1**: Load conflicted and dplyr packages
+
+```{r setup}
+library(conflicted) # always keep it on top
+library(dplyr)
+conflict_prefer("filter", "dplyr")
+```
+
+**Step 2**: Filter data in mtcars data set
+
+```{r}
+mtcars %>%
+  filter(cyl == 4)
+```
+
+Notice that the conflicted package identified that filter function is available in 2 packages and wants us to explicitly declare which one we want to use.
+
+**Step 3**: Go to **Step 1** and declare the winner. Then rerun **Step 2**.
+
+Notice that the error is now gone.

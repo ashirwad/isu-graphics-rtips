@@ -1,0 +1,25 @@
+---
+title: "show-col-demo"
+author: "Ashirwad Barnwal"
+date: "9/9/2021"
+output: html_document
+---
+
+**Step 1** Load scales package
+
+```{r setup}
+library(scales)
+```
+
+**Step 2** Preview colors
+
+```{r}
+# Manually input color hex values
+show_col("#ffffff")
+show_col("#00ff00")
+
+# Use a color palette
+show_col(viridis_pal()(4))
+```
+
+

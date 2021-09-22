@@ -1,0 +1,58 @@
+---
+title: "datapasta-demo"
+author: "Ashirwad Barnwal"
+date: "9/20/2021"
+output: html_document
+---
+
+**Step 1**: Load *datapasta* and *tidyverse* packages
+
+```{r}
+library(datapasta)
+library(tidyverse)
+```
+
+**Step 2**: Copy data from a webpage as a tibble
+
+```{r}
+traffic_fatalities <- tibble::tribble(
+                          ~V1,    ~V2, ~V3,    ~V4, ~V5,    ~V6,
+                        2010L,  10508, 32L,  22491, 68L,  32999,
+                        2011L,  10001, 31L,  22478, 69L,  32479,
+                        2012L,  10329, 31L,  23453, 69L,  33782,
+                        2013L,   9696, 29L,  23198, 71L,  32894,
+                        2014L,   9283, 28L,  23461, 72L,  32744,
+                        2015L,   9723, 27L,  25762, 73L,  35485,
+                        2016L,  10291, 27L,  27515, 73L,  37806,
+                        2017L,   9947, 27L,  27526, 73L,  37473,
+                        2018L,   9579, 26L,  27256, 74L,  36835,
+                        2019L,   9478, 26L,  26618, 74L,  36096
+                        )
+```
+
+**Step 3**: Rename columns to something meaningful
+
+```{r}
+traffic_fatalities <- traffic_fatalities %>%
+  rename(
+    year = V1,
+    speed_freq = V2,
+    speed_pct = V3,
+    not_speed_freq = V4,
+    not_speed_pct = V5,
+    total = V6
+  )
+glimpse(traffic_fatalities)
+```
+
+**Step 4**: Quickly generate a plot visualizing trend
+
+```{r}
+traffic_fatalities %>%
+  pivot_longer(-year) %>%
+  filter(name %in% c("speed_pct", "not_speed_pct")) %>%
+  ggplot(aes(x = year, y = value, color = name)) + 
+  geom_line() + 
+  scale_x_continuous(breaks = c(2010, 2012, 2014, 2016, 2018))
+```
+

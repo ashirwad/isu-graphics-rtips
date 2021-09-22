@@ -1,0 +1,50 @@
+---
+title: "geom-blank-demo"
+author: "Ashirwad Barnwal"
+date: "9/21/2021"
+output: html_document
+---
+
+**Step 1**: Load *tidyverse*
+
+```{r}
+library(tidyverse)
+```
+
+**Step 2**: Create a faceted plot (This example is borrowed from Christopher Chizinski's blog [https://chrischizinski.github.io/rstats/using_geom_blank/])
+
+```{r}
+data <- bind_rows(
+  tibble(group = "A", x = runif(50), y = rnorm(50, mean = 5)),
+  tibble(group = "B", x = runif(50), y = rnorm(50, mean = 5, sd = 3) + 20),
+  tibble(group = "C", x = runif(50), y = rnorm(50, mean = 5, sd = 5) + 30)
+)
+glimpse(data)
+
+data %>%
+  ggplot(aes(x = x, y = y, color = group), size = 4) + 
+  geom_point() +
+  facet_wrap(~group, scales = "free_y")
+```
+
+**Step 3**: Update the faceted plot created in **Step 2** to have better axis ranges
+
+```{r}
+blank_data <- tibble(
+  label = c("min_y_A", "max_y_A", "min_y_B", "max_y_B", "min_y_C", "max_y_C"),
+  group = c("A", "A", "B", "B", "C", "C"),
+  x = 0,
+  y = c(0, 8, 0, 40, 0, 50)
+)
+glimpse(blank_data)
+
+data %>%
+  ggplot(aes(x = x, y = y, color = group), size = 4) + 
+  geom_point() +
+  geom_blank(data = blank_data, aes(x = x, y = y)) + 
+  facet_wrap(~group, scales = "free_y")
+```
+
+Notice that the faceted plot now has better y-axis ranges.
+
+

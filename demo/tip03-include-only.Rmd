@@ -1,0 +1,22 @@
+---
+title: "include-only-demo"
+author: "Ashirwad Barnwal"
+date: "9/9/2021"
+output: html_document
+---
+
+**Step 1**: Load magrittr package
+
+```{r}
+library(tidyr) # automatically attaches the pipe operator
+library(magrittr, include.only = c("%$%", "%<>%"))
+```
+
+Notice that calling library() loads the whole namespace and causes unnecessary namespace conflicts!
+
+**Step 2**: Since we only need a couple of functions from magrittr, go to **Step 1** and only load those functions
+
+You will need to restart the R session after **Step 2** and then run the first chunk. Notice that the message on object masking is no longer there.
+
+
+

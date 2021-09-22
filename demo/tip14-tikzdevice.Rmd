@@ -1,0 +1,51 @@
+---
+title: "tikzdevice-demo"
+author: "Ashirwad Barnwal"
+date: "9/20/2021"
+output: html_document
+---
+
+**Step 1**: Load *here*, *tikzDevice*, and *tidyverse* packages
+
+```{r}
+library(here)
+library(tikzDevice)
+options(
+  tikzLatexPackages = c(
+    getOption("tikzLatexPackages"),
+    "\\usepackage{txfonts, xcolor}" # need these packages for red heartsuit
+  )
+)
+library(tidyverse)
+```
+
+**Step 2**: Install MiKTeX and TeXstudio (people who work with LaTeX generally have these installed on their system)
+
+**Step 3**: Generate a ggplot with latex code
+
+```{r}
+tikz(
+  here("demo", "ggplot-to-tikz.tex"), width = 6, height = 6, standAlone = TRUE
+)
+
+# This example is borrowed from latex2exp R package vignette
+x <- seq(0, 4, length.out = 100)
+alpha <- 1:5
+data <- map_df(alpha, ~ tibble(v = .*x^., x = x, alpha = .))
+
+p <- ggplot(data, aes(x = x, y = v, color = as.factor(alpha))) +
+  geom_line() + 
+  ylab("($\\alpha  x^\\alpha$, where $\\alpha \\in 1 \\ldots 5$)") +
+  ggtitle("(Using \\LaTeX\\ for plotting in ggplot2. I $\\textcolor{red}{\\varheartsuit}$ ggplot!)") +
+  coord_cartesian(ylim = c(-1, 10)) +
+  guides(color = guide_legend(title = NULL)) +
+  scale_color_discrete(labels = sprintf("($\\alpha = %d$)", alpha))
+
+print(p)
+dev.off()
+```
+
+
+
+
+

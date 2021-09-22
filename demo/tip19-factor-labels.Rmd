@@ -1,0 +1,63 @@
+---
+title: "factor-labels-demo"
+author: "Ashirwad Barnwal"
+date: "9/9/2021"
+output: html_document
+---
+
+**Step 1**: Load packages
+
+```{r setup}
+library(tidyverse)
+library(sjlabelled)
+library(patchwork)
+```
+
+**Step 2** Create data frames
+
+```{r}
+df <- data.frame(v = c(1, 2, 3), f = c("a", "b", "c"))
+df_labelled <- df %>%
+  val_labels(
+    # levels are characters
+    f = c(
+      "Treatment A: XYZ" = "a", "Treatment B: YZX" = "b", 
+      "Treatment C: ZYX" = "c"
+    ), 
+    # levels are numeric
+    v = c("Exp. Unit 1" = 1, "Exp. Unit 2" = 2, "Exp. Unit 3" = 3)
+  )
+```
+
+Notice that df and df_labelled appear exactly the same when printed and nothing changes
+in terms of scripting.
+
+```{r}
+df
+df_labelled
+```
+
+**Step 3**: Inspect the structures of df and df_labelled
+
+```{r}
+str(df)
+str(df_labelled) # notice the attributes
+```
+
+**Step 4**: Create ggplots with and without pretty names for factor levels
+
+```{r}
+p1 <- df_labelled %>% # or, df
+  ggplot(aes(x = f, y = v)) + 
+  geom_point() + 
+  labs(x = "Treatment", y = "Measurement")
+p2 <- df_labelled %>%
+  ggplot(aes(x = as_label(f), y = as_label(v))) + 
+  geom_point() + 
+  labs(x = "Treatment", y = "Experimental Unit")
+
+p1 / p2
+```
+
+
+

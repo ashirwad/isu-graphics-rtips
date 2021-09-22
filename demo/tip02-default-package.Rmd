@@ -1,0 +1,26 @@
+---
+title: "default-package-demo"
+author: "Ashirwad Barnwal"
+date: "9/9/2021"
+output: html_document
+---
+
+**Step 1**: Load default and ggplot2 packages
+
+```{r setup}
+library(default)
+library(ggplot2)
+default(ggsave) <- list(path = "./figures", width = 6, height = 6 * 0.618)
+```
+
+**Step 2**: Generate a random plot and save it
+
+```{r}
+p1 <- ggplot(mtcars, aes(x = cyl, y = mpg)) + 
+  geom_point()
+ggsave("some-informative-name.png", p1)
+```
+
+Notice that we can now quickly save ggplots of uniform size in a common folder.
+
+**IMPORTANT**: It's best to change ggsave function's default arguments in the setup chunk. So, go to **Step 1**, change ggsave's defaults, and get rid of **Step 2** and **Step 3**

@@ -1,0 +1,49 @@
+---
+title: "here-package-demo"
+author: "Ashirwad Barnwal"
+date: "9/18/2021"
+output: html_document
+---
+
+**Step 1**: Load the *here* package
+
+```{r}
+library(here)
+```
+
+Notice that when *here* package is loaded it instructs a user about the working directory.
+
+**Step 2**: Construct file paths relative to project root in a more intuitive manner
+
+```{r}
+here("demo", "data", "mtcars.csv")
+```
+
+**Step 3**: Let's read a csv file
+
+```{r}
+# use relative path
+read.csv("data/mtcars.csv")
+
+# use path constructed via here::here
+read.csv(here("demo", "data", "mtcars.csv"))
+```
+
+**Step 4**: Let's move this Rmarkdown file into a sub-folder of *demo* folder and import the *mtcars.csv* again
+
+```{r}
+# this will fail because relative path has changed
+read.csv("data/mtcars.csv")
+
+# we need to tweak the relative path for it work
+read.csv("../data/mtcars.csv")
+
+# this will work correctly since here::here constructs absolute paths
+read.csv(here("demo", "data", "mtcars.csv"))
+```
+
+We can see that the paths constructed using *here::here* are more robust to file reorganizations.
+
+
+
+

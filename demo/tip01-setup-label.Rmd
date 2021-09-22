@@ -1,0 +1,25 @@
+---
+title: "setup-label-demo"
+author: "Ashirwad Barnwal"
+date: "9/9/2021"
+output: html_document
+---
+
+**Step 1**: Load magrittr package
+
+```{r setup}
+library(magrittr)
+```
+
+**Step 2**: Use the pipe operator to get the number of rows in the mtcars data set
+
+```{r}
+mtcars %>%
+  nrow()
+```
+
+Notice that running **Step 2** without running **Step 1** throws error. It is expected because this pipe operator is not available in base R.
+
+**Step 3**: Go back to **Step 1**, rename the chunk to *setup* (DO NOT RUN IT), and then perform **Step 2**
+
+Notice that RStudio now automatically runs the *setup* chunk before running the chunk in **Step 2**
