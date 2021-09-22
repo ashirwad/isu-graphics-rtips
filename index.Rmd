@@ -526,7 +526,7 @@ class: top, left
 
 .frame[
 
-# Tip #20: Use RStudio **snippets** to add header templates to R scripts
+# Tip #20: Use RStudio snippets to add header templates to R scripts
 
 ]
 
