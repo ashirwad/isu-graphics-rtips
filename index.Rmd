@@ -506,7 +506,7 @@ class: top, left
 
 .frame[
 
-# Tip #19: Add labels to factor levels using **sjlabelled** package for pretty printing
+# Tip #19: Add labels to factor levels using sjlabelled package for pretty printing
 
 ]
 
