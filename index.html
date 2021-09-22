@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>20 random tips and tricks for working with R, Rmarkdown, and RStudio</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ashirwad Barnwal" />
+    <meta name="date" content="2021-09-09" />
+    <script src="libs/header-attrs-2.10/header-attrs.js"></script>
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <script src="libs/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="libs/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon-1.4.1/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, orientation=auto"/>
+    <meta name="github-repo" content="ashirwad/isu-graphics-rtips"/>
+    <meta name="twitter:title" content="20 random tips and tricks for working with R, Rmarkdown, and RStudio"/>
+    <meta name="twitter:description" content="Talk on R tips &amp; tricks. Presented at ISU Graphics Group meeting in Fall 2021."/>
+    <meta name="twitter:url" content="https://isugg21-rtips.netlify.app"/>
+    <meta name="twitter:image" content="https://isugg21-rtips.netlify.app/social-media-card.png"/>
+    <meta name="twitter:image:alt" content="Title slide of the talk on R tips and tricks presented at ISU Graphics Group meeting in Fall 2021 by Ashirwad Barnwal"/>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:creator" content="@ashirwad1992"/>
+    <meta name="twitter:site" content="@ashirwad1992"/>
+    <meta property="og:title" content="20 random tips and tricks for working with R, Rmarkdown, and RStudio"/>
+    <meta property="og:description" content="Talk on R tips &amp; tricks. Presented at ISU Graphics Group meeting in Fall 2021."/>
+    <meta property="og:url" content="https://isugg21-rtips.netlify.app"/>
+    <meta property="og:image" content="https://isugg21-rtips.netlify.app/social-media-card.png"/>
+    <meta property="og:image:alt" content="Title slide of the talk on R tips and tricks presented at ISU Graphics Group meeting in Fall 2021 by Ashirwad Barnwal"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="article:author" content="Ashirwad Barnwal"/>
+    <!--- Thanks, Alison: https://github.com/apreshill/talks/blob/804bc45e7b5a2335c1def1bdd0a777d21fc8568b/ares-kind-tools/header.html --->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/my-theme.css" type="text/css" />
+    <link rel="stylesheet" href="assets/my-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+class: title-slide, left, middle
+background-image: url("images/light-bulb-icon.jpg")
+background-position: right
+background-size: contain
+background-color: #7899d4ff
+
+.pull-left[
+
+# 20 random tips and tricks for working with R, Rmarkdown, and RStudio
+
+## ISU Graphics Group Meeting
+
+### Ashirwad Barnwal
+
+### 2021-09-09
+
+]
+
+---
+
+class: middle, center, inverse
+background-image: url("images/isu-campanile.jpg")
+background-position: right
+background-size: contain
+
+.pull-left[
+
+## .big-text[Welcome!]
+
+]
+
+---
+
+class: middle, center, inverse
+
+### Ashirwad Barnwal
+
+&lt;img style="border-radius: 50%;" src="https://ashirwad.netlify.app/authors/ashirwad/avatar.jpg" width="150px"/&gt;
+
+### Ph.D. Candidate (Civil) | M.S. Student (Statistics)
+
+### Institute for Transportation (InTrans)
+
+[<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> @ashirwad](https://github.com/ashirwad)    
+[<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg> @ashirwad1992](https://www.linkedin.com/in/ashirwad1992/)   
+[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg> ashirwad.netlify.app](https://ashirwad.netlify.app)
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #01: Use setup label for your setup chunk
+
+]
+
+&gt; "There is one chunk name that imbues special behaviour: **setup**. When you’re in a notebook mode, the chunk named setup will be run automatically once, before any other code is run."
+&gt;
+&gt; .center[[R4DS](https://r4ds.had.co.nz/r-markdown.html#chunk-name)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/DxuT_qOev-I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #02: If you don't like the default arguments in an R function, change it!
+
+]
+
+.pull-left[
+
+&lt;img src="https://media0.giphy.com/media/Ssltx68WIeX1wA0Mg8/giphy-downsized.gif" width="65%" /&gt;
+
+.footnote[Available at [*GIPHY*](https://gph.is/g/4zgwK8L)]
+
+]
+
+.pull-right[
+
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Roses are red&lt;br&gt;Violets are blue &lt;br&gt;In R versions after 4.0.0&lt;br&gt;stringsAsFactors does not default to TRUE&lt;/p&gt;&amp;mdash; Kiegan Rice (@kieganer) &lt;a href="https://twitter.com/kieganer/status/1361057477115203587?ref_src=twsrc%5Etfw"&gt;February 14, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/rgxkgv_bgHQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #03: Don't import the whole namespace if all you need is a couple of functions
+
+]
+
+&lt;center&gt;
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;FWIW you can accomplish something similar with base R tools now: e.g. `library(pkg, include.only = c(&amp;quot;f1&amp;quot;, &amp;quot;f2&amp;quot;))` will load &amp;lt;pkg&amp;gt; but only put functions f1 and f2 on the search path. Moral equivalent of &amp;quot;from pkg import f1, f2&amp;quot;?&lt;/p&gt;&amp;mdash; Kevin Ushey (@kevin_ushey) &lt;a href="https://twitter.com/kevin_ushey/status/1281085273154048000?ref_src=twsrc%5Etfw"&gt;July 9, 2020&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+&lt;/center&gt;
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/w0qWm9aHb9o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #04: Handle ambiguous function names elegantly using the conflicted package
+
+]
+
+&gt; "The goal of conflicted is to provide an alternative conflict resolution strategy. R’s default conflict resolution system gives precedence to the most recently loaded package. This can make it hard to detect conflicts, particularly when introduced by an update to an existing package. **conflicted takes a different approach, making every conflict an error and forcing you to choose which function to use**."
+&gt;
+&gt; .center[[Hadley Wickham](https://conflicted.r-lib.org/)]
+
+---
+
+class:  middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/5vXWCBveUn4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #05: Use `here::here()` for generating file paths
+
+]
+
+.center[
+
+&gt; "If the first line of your R script is  
+&gt; `setwd("C:\Users\jenny\path\that\only\I\have")`  
+&gt; I will come into your office and SET YOUR COMPUTER ON FIRE 🔥."
+&gt;
+&gt; [Jenny Bryan](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/)
+
+]
+
+---
+
+class: middle, inverse
+background-image: url("images/here-function-drake-meme.png")
+background-position: right
+background-size: contain
+
+## Thanks [@krlmlr](https://twitter.com/krlmlr?s=20)!
+
+&lt;img style="border-radius: 50%;" src="https://unavatar.vercel.app/twitter/krlmlr" width="150px"/&gt; 
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/gock2RtsppY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #06: Switch to fs package for file system operations
+
+]
+
+&gt; "fs functions smooth over some of the idiosyncrasies of file handling with base R functions: 
+&gt; - Vectorization. All fs functions are vectorized, accepting multiple paths as input. Base functions are **inconsistently vectorized.**"
+&gt;
+&gt; .center[[Jim Hester](https://fs.r-lib.org/index.html)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/fdrfAv9QC7c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #07: Use `fs::file_show()` to open files or directories
+
+]
+
+&gt; `file_show(path = ".", browser = getOption("browser"))`
+&gt;
+&gt; .center[[function reference](https://fs.r-lib.org/reference/file_show.html)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/_s7zlOAJuhI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #08: Upgrade RStudio and start using the visual markdown editor
+
+]
+
+&gt; "Visual markdown editing is available in RStudio v1.4 or higher. You can download the latest version of RStudio here: https://rstudio.com/products/rstudio/download/."
+&gt; 
+&gt; "**Markdown documents can be edited in either source or visual mode**. To switch into visual mode for a given document, use the button at the top-right of the document toolbar (or alternatively the ⌃⇧ F4 keyboard shortcut)."
+&gt;
+&gt; .center[[rstudio.github.io](https://rstudio.github.io/visual-markdown-editing/?_ga=2.27003637.974706172.1630717819-1281065507.1590280001)]
+
+---
+
+class: middle, center
+
+![visual-markdown](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif) 
+
+.footnote[[Source](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif)]
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #09: Use Mathpix Snip to generate LaTeX code for math equations
+
+]
+
+&gt; "Export images and PDFs to LaTex, DOCX, Overleaf, Markdown, Excel, ChemDraw and more, with our AI powered document conversion technology."
+&gt; 
+&gt; "Save time preparing scientific documents with Mathpix Snip."
+&gt;
+&gt; .center[[mathpix.com](https://mathpix.com/)]
+
+---
+
+class: middle, center
+
+&lt;iframe src="https://mathpix.com/videos/hero-video-snip.mp4" width="100%" height="600px"&gt;&lt;/iframe&gt;
+
+.footnote[[Source](https://mathpix.com/)]
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #10: Use TablesGenerator for generating markdown tables
+
+]
+
+&gt; "Quickly and easily generate markup for tables in LaTeX, HTML, plain text, Markdown and MediaWiki formats."
+&gt;
+&gt; .center[[onethingwell.org](https://onethingwell.org/post/75483091484/tablesgenerator)] 
+
+---
+
+class: middle, center
+
+&lt;iframe src="https://www.tablesgenerator.com/markdown_tables" width="100%" height="600px"&gt;&lt;/iframe&gt;
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/t94A96fQnLU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #11: Use geom_blank() for setting pretty axis limits for faceted plots
+
+]
+
+&gt; "Using facet_wrap() in ggplot2 is a great way to create multiple panelled plots. Though when I am running these, particularly on datasets with different scales, **the axis are not as clean as I like**."
+&gt;
+&gt; .center[[Christopher Chizinski](https://chrischizinski.github.io/rstats/using_geom_blank/)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/0UQbJLptZUo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #12: Use latex2exp package to convert latex into plotmath expressions
+
+]
+
+&gt; "I find **plotmath expressions to be quite opaque**, while LaTeX is a de-facto standard for mathematical expressions, so [latex2exp] package might be useful to others as well."
+&gt;
+&gt; .center[[Stefano Meschiari](https://cran.r-project.org/web/packages/latex2exp/vignettes/using-latex2exp.html)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/6YU8pm_X6qI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #13: Use `scales::show_col()` function to preview colors in RStudio viewer
+
+]
+
+.pull-left[
+
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;scales::show_col() &lt;a href="https://t.co/El8891gLgV"&gt;https://t.co/El8891gLgV&lt;/a&gt;&lt;/p&gt;&amp;mdash; tj mahr 🍍🍕 (@tjmahr) &lt;a href="https://twitter.com/tjmahr/status/1374423244028014602?ref_src=twsrc%5Etfw"&gt;March 23, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+]
+
+.pull-right[
+
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;I think scales::show_col() is what you&amp;#39;re looking for&lt;a href="https://t.co/D3GwydYAKD"&gt;https://t.co/D3GwydYAKD&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jake Rothschild (@jake_rothschild) &lt;a href="https://twitter.com/jake_rothschild/status/1420546678034247686?ref_src=twsrc%5Etfw"&gt;July 29, 2021&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/vvW8zAR92X8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #14: Use tikzDevice package to generate tikz code for ggplot
+
+]
+
+&gt; "The tikzDevice package **provides a graphics output device for R that records plots in a LaTeX-friendly format**. The device transforms plotting commands issued by R functions into LaTeX code blocks. When included in a paper typeset by LaTeX, these blocks are interpreted with the help of TikZ—a graphics package for TeX and friends written by Till Tantau."
+&gt;
+&gt; .center[[Charlie Sharpsteen](https://daqana.github.io/tikzDevice/index.html)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/RlDCQYuF_GI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #15: Use cache.extra knitr chunk option to enable cache dependency on a file
+
+]
+
+&gt; "If I have a chunk that reads a data file then **modifying the data file doesn't invalidate the cached chunk**."
+&gt; 
+&gt; .center[[Barry Rowlingson](https://github.com/yihui/knitr/issues/238#issue-4608247)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/2PHxvxuQrH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #16: Use crop and optipng knitr chunk options for cropping and optimizing png plots
+
+]
+
+.pull-left[
+
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;&lt;a href="https://twitter.com/hashtag/rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#rstats&lt;/a&gt; question:&lt;br&gt;&lt;br&gt;How do crop unneeded white space from a ggplot? Plot is going into an RMarkdown PDF and has a lot of white space above and below it.&lt;/p&gt;&amp;mdash; Patrick (@pjames122) &lt;a href="https://twitter.com/pjames122/status/1031992769127100418?ref_src=twsrc%5Etfw"&gt;August 21, 2018&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+]
+
+.pull-right[
+
+&lt;blockquote class="twitter-tweet"&gt;&lt;p lang="en" dir="ltr"&gt;Reduce &lt;a href="https://twitter.com/hashtag/knitr?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#knitr&lt;/a&gt; output file size by automatically optimizing images: &lt;a href="https://t.co/wCArERuhoF"&gt;https://t.co/wCArERuhoF&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/Rmarkdown?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#Rmarkdown&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/Rstats?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#Rstats&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/pngquant?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#pngquant&lt;/a&gt; &lt;a href="https://twitter.com/hashtag/optipng?src=hash&amp;amp;ref_src=twsrc%5Etfw"&gt;#optipng&lt;/a&gt;&lt;/p&gt;&amp;mdash; Kamil Slowikowski (@slowkow) &lt;a href="https://twitter.com/slowkow/status/798614606377783296?ref_src=twsrc%5Etfw"&gt;November 15, 2016&lt;/a&gt;&lt;/blockquote&gt; &lt;script async src="https://platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;
+
+]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/XeYx4sUu7Xw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #17: Use datapasta package for copying and pasting data to and from R
+
+]
+
+&gt; "datapasta is about reducing resistance associated with copying and pasting data to and from R."
+&gt;
+&gt; .center[[Miles McBain](https://milesmcbain.github.io/datapasta/)]
+
+---
+
+class: middle, center
+
+&lt;img src="https://raw.githubusercontent.com/milesmcbain/datapasta/master/inst/media/tribble_paste.gif" width="85%" /&gt;
+
+.footnote[[Source](https://raw.githubusercontent.com/milesmcbain/datapasta/master/inst/media/tribble_paste.gif)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/MWcsq72RZtE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #18: Use rio package for data import and export
+
+]
+
+&gt; "A Swiss-Army Knife for Data I/O"
+&gt;
+&gt; .center[[Chung-hong Chan](https://cloud.r-project.org/web/packages/rio/vignettes/rio.html)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/nfKi_O6hJbc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #19: Add labels to factor levels using sjlabelled package for pretty printing
+
+]
+
+&gt; "There seems to be a difference between levels and labels of a factor in R. Up to now, I always thought that **levels were the 'real' name of factor levels**, and **labels were the names used for output (such as tables and plots)**."
+&gt;
+&gt; .center[[From SO question by donodarazao](https://stackoverflow.com/q/5869539/10789048)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/c3mx-62uc70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, left
+
+.frame[
+
+# Tip #20: Use RStudio snippets to add header templates to R scripts
+
+]
+
+&gt; "**Do you ever face a blank script, and not know where to start?** This is one reason I find it useful to have a template to follow for my R scripts."
+&gt;
+&gt; .center[[From Dr Timothy S Farewell's blog](https://timfarewell.co.uk/my-r-script-header-template/#:~:text=Open%20RStudio,of%20the%20snippets%20code%20block.)]
+
+---
+
+class: middle, center
+
+&lt;iframe width="1120" height="630" src="https://www.youtube.com/embed/ywbgYS6Z_Hc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+---
+
+class: top, center
+
+.frame[
+
+# Happy Fall Y'all!
+
+]
+
+.pull-left[
+
+&lt;img src="https://media4.giphy.com/media/ONxw4niC96zwk/giphy.gif" width="100%" /&gt;
+
+.left[.footnote[Available at [*GIPHY*](https://media.giphy.com/media/ONxw4niC96zwk/giphy.gif?cid=790b76118d57c7a8946002fb40b5af348500a765f5bbb75d&amp;rid=giphy.gif&amp;ct=g)]]
+
+]
+
+.pull-right[
+
+&lt;img src="https://media0.giphy.com/media/4TTqqym8oj0Q0/giphy.gif" width="100%" /&gt;
+
+.left[.footnote[Available at [*GIPHY*](https://media.giphy.com/media/4TTqqym8oj0Q0/giphy.gif?cid=790b761190c3536ca9003bb4ce7ca3ec12008603a5494af8&amp;rid=giphy.gif&amp;ct=g)]]
+
+]
+
+---
+
+class: bottom
+background-color: #fad662
+
+.pull-left[
+
+### A big thanks to:
+
++ Yihui Xie for [xaringan](https://github.com/yihui/xaringan),
++ Alison Hill for [slide layout](https://github.com/apreshill/talks/tree/master/ares-kind-tools),
++ [Ganesh Krishnan](https://www.linkedin.com/in/ganeshkrishnann/) and [ISU Graphics Group](https://isu-graphics.rbind.io/) for the talk invitation
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+### GitHub repo: [<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>](https://github.com/ashirwad/isu-graphics-rtips) | License: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
+
+]
+
+.pull-right[
+
+.right[
+
+&lt;img style="border-radius: 50%;" src="https://ashirwad.netlify.app/authors/ashirwad/avatar.jpg" width="150px"/&gt;
+
+# Thank you!
+
+### Connect with me here...
+
+[<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> @ashirwad](https://github.com/ashirwad)    
+[<svg aria-hidden="true" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg> @ashirwad1992](https://www.linkedin.com/in/ashirwad1992/)   
+[<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg> ashirwad.netlify.app](https://ashirwad.netlify.app)
+
+]
+
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="https://platform.twitter.com/widgets.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\"></div>\n</div>\n",
+"highlightStyle": "solarized-light",
+"highlightLanguage": ["r", "css", "yaml"],
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
