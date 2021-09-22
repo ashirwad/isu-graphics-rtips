@@ -1,8 +1,10 @@
+/* Thanks, Alison: https://github.com/apreshill/talks/blob/804bc45e7b5a2335c1def1bdd0a777d21fc8568b/ares-kind-tools/assets/css/my-theme.css */
+
 :root {
 /* CSS HEX */
 --independence: #344966ff;
 --cornflower-blue: #7899d4ff;
---marigold: #fad662; 
+--marigold: #fad662;
 --china-rose: #b74f6fff;
 --orchid-pink: #ffc6d9ff;
 --cultured: #fcfaf9ff;
@@ -55,8 +57,8 @@ pre {
   border-radius: 0px; /*undo rounded corners*/
 }
 
-pre code { 
-  background: none; 
+pre code {
+  background: none;
   font-size: 0.8rem;
 }
 
@@ -88,13 +90,13 @@ a:hover, a:active, a:focus {
   font-size: 1.25em;
 }
 
-.remark-inline-code { 
+.remark-inline-code {
   color: var(--independence);
   font-size: 1em;
 }
 
-.remark-code-line-highlighted { 
-  background-color:  #f3e0e1; 
+.remark-code-line-highlighted {
+  background-color:  #f3e0e1;
 }
 
 .inverse {
@@ -408,7 +410,7 @@ hr {
 }
 
 .monkey-slide {
-  background-image: 
+  background-image:
     linear-gradient(
       rgba(59, 66, 69, .5),
       rgba(59, 66, 69, .5)
