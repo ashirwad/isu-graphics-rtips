@@ -458,11 +458,11 @@ class: top, left
 
 .frame[
 
-# Tip #17: Use **datapasta** for copying and pasting data to and from R
+# Tip #17: Use datapasta package for copying and pasting data to and from R
 
 ]
 
-> **datapasta** is about reducing resistance associated with copying and pasting data to and from R.
+> "datapasta is about reducing resistance associated with copying and pasting data to and from R."
 >
 > .center[[Miles McBain](https://milesmcbain.github.io/datapasta/)]
 
@@ -470,7 +470,7 @@ class: top, left
 
 class: middle, center
 
-```{r datapasta-demo, echo = FALSE, out.width = "90%"}
+```{r echo = FALSE, out.width = "90%"}
 knitr::include_graphics("https://raw.githubusercontent.com/milesmcbain/datapasta/master/inst/media/tribble_paste.gif")
 ```
 
