@@ -486,7 +486,7 @@ class: top, left
 
 .frame[
 
-# Tip #18: Use **rio** package for data import and export
+# Tip #18: Use rio package for data import and export
 
 ]
 
