@@ -293,6 +293,8 @@ class: middle, center
 
 ![visual-markdown](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif) 
 
+.footnote[[Source](https://blog.rstudio.com/2020/09/30/rstudio-v1-4-preview-visual-markdown-editing/images/visualmode-demo.gif)]
+
 ---
 
 class: top, left
@@ -318,6 +320,8 @@ knitr::include_url(
   "https://mathpix.com/videos/hero-video-snip.mp4", height = "600px"
 )
 ```
+
+.footnote[[Source](https://mathpix.com/)]
 
 ---
 
@@ -503,9 +507,11 @@ class: top, left
 
 class: middle, center
 
-```{r echo = FALSE, out.width = "90%"}
+```{r echo = FALSE, out.width = "85%"}
 knitr::include_graphics("https://raw.githubusercontent.com/milesmcbain/datapasta/master/inst/media/tribble_paste.gif")
 ```
+
+.footnote[[Source](https://raw.githubusercontent.com/milesmcbain/datapasta/master/inst/media/tribble_paste.gif)]
 
 ---
 
