@@ -25,6 +25,33 @@ output:
       in_header: "assets/header.html"
 ---
 
+```{r setup, include = FALSE}
+xaringanExtra::use_share_again()
+
+# Add metadata
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "ashirwad/isu-graphics-rtips") %>% 
+  meta_social(
+    title = "20 random tips and tricks for working with R, Rmarkdown, and RStudio",
+    description = paste(
+      "Talk on R tips & tricks.",
+      "Presented at ISU Graphics Group meeting in Fall 2021."
+    ),
+    url = "https://isugg21-rtips.netlify.app",
+    image = "https://isugg21-rtips.netlify.app/social-media-card.png",
+    image_alt = paste(
+      "Title slide of the talk on R tips and tricks", 
+      "presented at ISU Graphics Group meeting in Fall 2021 by Ashirwad Barnwal"
+    ),
+    og_type = "website",
+    og_author = "Ashirwad Barnwal",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@ashirwad1992"
+  ) %>%
+  meta_viewport()
+```
+
 class: title-slide, left, middle
 background-image: url("images/light-bulb-icon.jpg")
 background-position: right
